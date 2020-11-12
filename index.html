@@ -18,14 +18,14 @@
     <!-- ASIDE SECTION -->
     <aside>
       <!-- User section -->
-      <header class="user">
+      <header class="header-name">
         <!-- user info -->
-        <div class="user-info">
+        <div class="header-info">
           <img :src="`./img/avatar${user.avatar}.jpg`" alt="user avatar">
           <span class="name">{{ user.name }}</span>
         </div>
         <!-- user menu -->
-        <div class="user-menu">
+        <div class="menu-icon">
           <i class="fas fa-circle-notch"></i>
           <i class="fas fa-comment-alt"></i>
           <i class="fas fa-ellipsis-v"></i>
@@ -68,15 +68,15 @@
     <!-- MAIN SECTION -->
     <main>
       <!-- Chat header -->
-      <header class="chat-name">
-        <div class="chat-name-info">
+      <header class="header-name">
+        <div class="header-info">
           <img :src="`./img/avatar_4.jpg`" alt="user avatar">
           <div>
             <span class="name">{{ contacts[3].name }}</span>
             <span>Ultimo accesso oggi alle 10:35</span>
           </div>
         </div>
-        <div class="chat-name-menu">
+        <div class="menu-icon">
           <i class="fas fa-search"></i>
           <i class="fas fa-paperclip"></i>
           <i class="fas fa-ellipsis-v"></i>
