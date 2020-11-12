@@ -45,11 +45,20 @@
       <section class="contacts">
         <!-- search bar -->
         <div class="search">
-
+          <input type="text"
+                placeholder="Cerca o inizia una nuova chat" 
+                class="search-input"
+          >
+          <i class="fas fa-search"></i>
         </div>
         <!-- contacts list -->
         <nav class="contact-list">
-
+          <ul>
+            <li class="contact-info" v-for="(contact, index) in contacts">
+              <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user avatar">
+              <span>{{ contact.name }}</span>
+            </li>
+          </ul>
         </nav>
       </section>
     </aside>
