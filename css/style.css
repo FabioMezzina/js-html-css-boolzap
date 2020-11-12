@@ -100,6 +100,8 @@ ul {
 
 /* Contacts section */
 .contacts {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -135,7 +137,17 @@ ul {
 
 /* Contacts list */
 .contact-list {
-  flex-gorw: 1;
+  position: relative;
+  flex-grow: 1;
+}
+
+.contact-list > ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .contact-info {
@@ -214,9 +226,18 @@ span.name + span {
 }
 
 /* Chat section */
-.chat {
+.main-chat {
+  position: relative;
   flex-grow: 1;
   background-image: url('../img/mine.jpg');
+}
+
+.chat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
 }
 
 /* Messages footer */
@@ -247,4 +268,11 @@ span.name + span {
 .write-message::placeholder {
   color: #d8d9da;
   font-weight: 500;
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 1200px) {
+  * {
+    font-size: 14px;
+  }
 }
