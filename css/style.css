@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
@@ -11,6 +12,9 @@ body {
   #009988 0%, #009988 15%,
   #dcdbd0 15%, #d0dbdb 100%);
 }
+
+/* TYPOGRAPHY */
+
 
 /* APP Container */
 .container {
@@ -33,14 +37,60 @@ body {
 
 /* User section */
 .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   height: 70px;
-  background-color: #dff; /* debug */
+  background-color: #eaeaea;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  max-height: 100%;
+}
+
+.user-info img {
+  max-height: 50px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.user-menu i {
+  margin-left: 10px;
+  color: #b1b1b1;
+  cursor: pointer;
 }
 
 /* Notifications section */
 .notifications {
+  display: flex;
+  align-items: center;
+  padding: 15px;
   height: 80px;
-  background-color: #ffd; /* debug */
+  background-color: #74dcff;
+}
+
+.bell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bell i {
+  font-size: 1.2rem;
+  color: #74dcff;
+}
+
+.notifications-setup a {
+  color: #437587;
 }
 
 /* Search bar */
@@ -66,7 +116,7 @@ body {
 /* Chat name */
 .chat-name {
   height: 70px;
-  background-color: #dff; /* debug */
+  background-color: #eaeaea;
 }
 
 /* Chat section */

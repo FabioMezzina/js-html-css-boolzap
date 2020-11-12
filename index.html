@@ -17,12 +17,30 @@
     <aside>
       <!-- User section -->
       <header class="user">
-
+        <!-- user info -->
+        <div class="user-info">
+          <img :src="`./img/avatar${user.avatar}.jpg`" alt="user avatar">
+          <span>{{ user.name }}</span>
+        </div>
+        <!-- user menu -->
+        <div class="user-menu">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
       </header>
+
       <!-- Notifications section -->
       <section class="notifications">
-
+        <div class="bell">
+          <i class="fas fa-bell-slash"></i>
+        </div>
+        <div class="notifications-setup">
+          <p>Ricevi notifiche di nuovi messaggi</p>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
       </section>
+
       <!-- Contacts section -->
       <section class="contacts">
         <!-- search bar -->
@@ -48,7 +66,7 @@
       </section>
       <!-- Messages footer -->
       <footer class="message">
-        
+
       </footer>
     </main>
   </div>
