@@ -3,3 +3,79 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  height: 100vh;
+  background-image: linear-gradient(to bottom,
+  #009988 0%, #009988 15%,
+  #dcdbd0 15%, #d0dbdb 100%);
+}
+
+/* APP Container */
+.container {
+  display: flex;
+  margin: auto;
+  height: 95%;
+  width: 85%;
+  background-color: #fff; /* debug */
+}
+
+/* ASIDE SECTION */
+#app aside {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 35%;
+  background-color: #cecece; /* debug */
+  border-right: 1px solid #d6d6d6;
+}
+
+/* User section */
+.user {
+  height: 70px;
+  background-color: #dff; /* debug */
+}
+
+/* Notifications section */
+.notifications {
+  height: 80px;
+  background-color: #ffd; /* debug */
+}
+
+/* Search bar */
+.search {
+  height: 50px;
+  background-color: #fdf; /* debug */
+}
+
+/* Contacts list */
+.contact-list {
+  flex-grow: 1;
+}
+
+/* MAIN SECTION */
+#app main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+  background-color: #777; /* debug */
+}
+
+/* Chat name */
+.chat-name {
+  height: 70px;
+  background-color: #dff; /* debug */
+}
+
+/* Chat section */
+.chat {
+  flex-grow: 1;
+}
+
+/* Messages footer */
+.message {
+  height: 70px;
+  background-color: #ddf; /* debug */
+}
