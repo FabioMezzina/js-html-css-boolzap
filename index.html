@@ -6,6 +6,8 @@
   <title>BoolZap</title>
   <!-- Vue.js -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> 
   <!-- Font Awesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'/>
   <!-- Styles -->
@@ -20,7 +22,7 @@
         <!-- user info -->
         <div class="user-info">
           <img :src="`./img/avatar${user.avatar}.jpg`" alt="user avatar">
-          <span>{{ user.name }}</span>
+          <span class="name">{{ user.name }}</span>
         </div>
         <!-- user menu -->
         <div class="user-menu">
@@ -56,7 +58,7 @@
           <ul>
             <li class="contact-info" v-for="(contact, index) in contacts">
               <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user avatar">
-              <span>{{ contact.name }}</span>
+              <span class="name">{{ contact.name }}</span>
             </li>
           </ul>
         </nav>
@@ -67,7 +69,18 @@
     <main>
       <!-- Chat header -->
       <header class="chat-name">
-        
+        <div class="chat-name-info">
+          <img :src="`./img/avatar_4.jpg`" alt="user avatar">
+          <div>
+            <span class="name">{{ contacts[3].name }}</span>
+            <span>Ultimo accesso oggi alle 10:35</span>
+          </div>
+        </div>
+        <div class="chat-name-menu">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
       </header>
       <!-- Chat section -->
       <section class="chat">

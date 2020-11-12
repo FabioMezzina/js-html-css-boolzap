@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   height: 100vh;
   background-image: linear-gradient(to bottom,
@@ -62,6 +63,7 @@ ul {
 
 .user-menu i {
   margin-right: 20px;
+  font-size: 1.2rem;
   color: #b1b1b1;
   cursor: pointer;
 }
@@ -152,6 +154,10 @@ ul {
   vertical-align: middle;
 }
 
+span.name {
+  font-size: 1.1rem;
+}
+
 .contact-info:hover {
   background-color: #f2f2f2;
 }
@@ -165,10 +171,46 @@ ul {
   background-color: #777; /* debug */
 }
 
-/* Chat name */
+/* Chat header */
 .chat-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
   height: 70px;
   background-color: #eaeaea;
+}
+
+.chat-name-info {
+  display: flex;
+  align-items: center;
+}
+
+.chat-name-info img {
+  max-height: 50px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.chat-name-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+span.name + span {
+  font-size: .8rem;
+  color: #697376;
+}
+
+.chat-name-menu {
+  display: flex;
+  align-items: center;
+}
+
+.chat-name-menu i {
+  margin-right: 20px;
+  font-size: 1.2rem;
+  color: #b1b1b1;
+  cursor: pointer;
 }
 
 /* Chat section */
@@ -190,6 +232,7 @@ ul {
 .message i {
   color: #697376;
   font-size: 1.4rem;
+  cursor: pointer
 }
 
 .write-message {
