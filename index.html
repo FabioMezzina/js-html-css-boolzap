@@ -56,8 +56,11 @@
         <!-- contacts list -->
         <nav class="contact-list">
           <ul>
-            <li tabindex="1" class="contact-info" v-for="(contact, index) in contacts" @click="chatIndex = index">
-              <img :src="`./img/avatar${contact.avatar}.jpg`" alt="user avatar">
+            <li v-for="(contact, index) in contacts"
+              :class="['contact-info', index=== chatIndex ? 'contact-focus' : '']"
+              @click="chatIndex = index"
+            >
+              <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.avatar">
               <span class="name">{{ contact.name }}</span>
             </li>
           </ul>

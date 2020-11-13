@@ -169,8 +169,11 @@ span.name {
   font-size: 1.1rem;
 }
 
-.contact-info:focus,
 .contact-info:hover {
+  background-color: #f2f2f2;
+}
+
+.contact-focus {
   background-color: #f2f2f2;
 }
 
