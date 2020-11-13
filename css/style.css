@@ -220,7 +220,7 @@ span.name + span {
   margin-bottom: 20px;
   padding-left: 10px;
   width: 40%;
-  height: 60px;
+  min-height: 60px;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -241,12 +241,6 @@ span.name + span {
   align-self: flex-end;
   background-color: #cbfbb3;
 }
-
-.received {
-  /* background-color: gray; */
-}
-
-
 
 /* Messages footer */
 .new-message {
