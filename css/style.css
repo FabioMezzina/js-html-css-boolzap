@@ -59,7 +59,7 @@ input::placeholder {
   height: 95%;
   width: 85%;
   min-width: 1024px;
-  background-color: #fff; /* debug */
+  background-color: #fff;
 }
 
 /* ASIDE SECTION */
@@ -169,11 +169,8 @@ span.name {
   font-size: 1.1rem;
 }
 
+.contact-focus,
 .contact-info:hover {
-  background-color: #f2f2f2;
-}
-
-.contact-focus {
   background-color: #f2f2f2;
 }
 
@@ -183,7 +180,6 @@ span.name {
   flex-direction: column;
   height: 100%;
   flex-basis: 65%;
-  background-color: #777; /* debug */
 }
 
 /* Chat header */
