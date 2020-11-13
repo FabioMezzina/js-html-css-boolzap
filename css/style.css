@@ -202,15 +202,54 @@ span.name + span {
 }
 
 .chat {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
+  padding: 80px;
   height: 100%;
+  width: 100%;
   overflow-y: auto;
 }
 
-/* Messages footer */
 .message {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  width: 40%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.message p {
+  font-size: .8rem;
+}
+
+.message span {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: .6rem;
+  color: #b5b9bb;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #cbfbb3;
+}
+
+.received {
+  /* background-color: gray; */
+}
+
+
+
+/* Messages footer */
+.new-message {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -219,7 +258,7 @@ span.name + span {
   background-color: #f4eeea;
 }
 
-.message i {
+.new-message i {
   flex-basis: 100px;
   text-align: center;
   color: #697376;

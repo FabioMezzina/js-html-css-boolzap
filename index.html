@@ -86,12 +86,15 @@
       <!-- Chat section -->
       <section class="main-chat">
         <div class="chat">
-
+          <div v-for="message in contacts[chatIndex].messages" :class="['message', message.status]">
+            <p>{{ message.message }}</p>
+            <span>{{ message.date }}</span>
+          </div>
         </div>
       </section>
 
       <!-- Messages footer -->
-      <footer class="message">
+      <footer class="new-message">
         <i class="far fa-smile"></i>
         <input type="text" placeholder="Scrivi un messaggio" class="write-message">
         <i class="fas fa-microphone"></i>
