@@ -169,6 +169,7 @@ span.name {
   font-size: 1.1rem;
 }
 
+.contact-info:focus,
 .contact-info:hover {
   background-color: #f2f2f2;
 }
@@ -213,19 +214,21 @@ span.name + span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 0;
   height: 70px;
   background-color: #f4eeea;
 }
 
 .message i {
+  flex-basis: 100px;
+  text-align: center;
   color: #697376;
   font-size: 1.4rem;
   cursor: pointer
 }
 
 .write-message {
-  flex-basis: 85%;
+  flex-grow: 1;
   padding: 10px 20px;
   height: 100%;
   font-size: .8rem;

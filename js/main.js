@@ -9,6 +9,7 @@ var app = new Vue({
             name: 'Nome Utente',
             avatar: '_io'
         },
+        chatIndex: 0,
         // Elenco contatti
         contacts: [
             {
