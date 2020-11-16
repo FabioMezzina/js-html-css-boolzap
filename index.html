@@ -57,7 +57,7 @@
         <nav class="contact-list">
           <ul>
             <li v-for="(contact, index) in contacts"
-              :class="['contact-info', index=== chatIndex ? 'contact-focus' : '']"
+              :class="['contact-info', index === chatIndex ? 'contact-focus' : '']"
               @click="chatIndex = index"
             >
               <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.avatar">
@@ -99,12 +99,19 @@
       <!-- Messages footer -->
       <footer class="new-message">
         <i class="far fa-smile"></i>
-        <input type="text" placeholder="Scrivi un messaggio" class="write-message">
+        <input type="text" placeholder="Scrivi un messaggio"  
+              class="write-message"
+              v-model="currentMessage"
+              @keyup.enter="sendMessage"
+        >
         <i class="fas fa-microphone"></i>
       </footer>
     </main>
   </div>
 
+  <!-- JS -->
+  <!-- Dayjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js" integrity="sha512-C2m821NxMpJ4Df47O4P/17VPqt0yiK10UmGl59/e5ynRRYiCSBvy0KHJjhp2XIjUJreuR+y3SIhVyiVilhCmcQ==" crossorigin="anonymous"></script>
   <!-- Main script -->
   <script src="./js/main.js"></script>
 </body>

@@ -10,6 +10,7 @@ var app = new Vue({
             avatar: '_io'
         },
         chatIndex: 0,
+        currentMessage: '',
         // Elenco contatti
         contacts: [
             {
@@ -96,6 +97,33 @@ var app = new Vue({
                 ],
             },
         ]
-    },
-    methods: {}
+    }, // <- End Data
+    methods: {
+        /**
+         * Send the message written in input
+         */
+        sendMessage() {
+            if(this.currentMessage.trim() !== '') {
+                this.contacts[this.chatIndex].messages.push({
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: this.currentMessage,
+                    status: 'sent'
+                });
+                this.currentMessage = '';
+                this.autoReply();
+            }
+        },
+        /**
+         * Generate a 'ok' response one second after sending a new message
+         */
+        autoReply() {
+            setTimeout(() => {
+                this.contacts[this.chatIndex].messages.push({
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    message: 'ok',
+                    status: 'recieved'
+                });
+            }, 1000);
+        },
+    } // <- End Methods
 });
