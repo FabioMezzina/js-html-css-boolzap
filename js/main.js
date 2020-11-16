@@ -110,20 +110,18 @@ var app = new Vue({
                     status: 'sent'
                 });
                 this.currentMessage = '';
-                this.autoReply();
+                setTimeout(this.autoReply, 1000);
             }
         },
         /**
-         * Generate a 'ok' response one second after sending a new message
+         * Generate a message 'ok' as auto reply
          */
         autoReply() {
-            setTimeout(() => {
                 this.contacts[this.chatIndex].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: 'ok',
                     status: 'received'
                 });
-            }, 1000);
         },
     } // <- End Methods
 });
