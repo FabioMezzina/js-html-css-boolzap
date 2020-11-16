@@ -103,7 +103,7 @@ var app = new Vue({
          * Send the message written in input
          */
         sendMessage() {
-            if(this.currentMessage.trim() !== '') {
+            if(this.currentMessage.trim()) {
                 this.contacts[this.chatIndex].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: this.currentMessage,
@@ -121,7 +121,7 @@ var app = new Vue({
                 this.contacts[this.chatIndex].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message: 'ok',
-                    status: 'recieved'
+                    status: 'received'
                 });
             }, 1000);
         },
