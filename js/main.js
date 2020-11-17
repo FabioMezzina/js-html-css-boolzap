@@ -115,6 +115,7 @@ var app = new Vue({
                 this.currentMessage = '';
                 setTimeout(() => {
                     this.printMessage('ok', 'received', activeContact);
+                    activeContact.lastAccess = dayjs().format('HH:mm');
                 }, 1000);
             }
         },
@@ -130,7 +131,6 @@ var app = new Vue({
                     message,
                     status
                 });
-                activeContact.lastAccess = dayjs().format('HH:mm');
                 this.autoScroll();
         },
         /**
