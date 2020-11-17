@@ -100,27 +100,27 @@ var app = new Vue({
     }, // <- End Data
     methods: {
         /**
-         * Send the message written in input
+         * Send the message written in input and generate an auto reply
          */
         sendMessage() {
             if(this.currentMessage.trim()) {
-                this.contacts[this.chatIndex].messages.push({
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    message: this.currentMessage,
-                    status: 'sent'
-                });
+                this.printMessage(this.currentMessage, 'sent');
                 this.currentMessage = '';
-                setTimeout(this.autoReply, 1000);
+                setTimeout(() => {
+                    this.printMessage('ok', 'received');
+                }, 1000);
             }
         },
         /**
-         * Generate a message 'ok' as auto reply
+         * Print a message in chat
+         * @param {string} message 
+         * @param {string} status 
          */
-        autoReply() {
-                this.contacts[this.chatIndex].messages.push({
+        printMessage(message, status) {
+            this.contacts[this.chatIndex].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    message: 'ok',
-                    status: 'received'
+                    message,
+                    status
                 });
         },
     } // <- End Methods
