@@ -11,6 +11,7 @@ var app = new Vue({
         },
         chatIndex: 0,
         currentMessage: '',
+        searchText: '',
         // Elenco contatti
         contacts: [
             {
@@ -122,6 +123,14 @@ var app = new Vue({
                     message,
                     status
                 });
+        },
+        /**
+         * Search for one or more contacts while typing in search input
+         */
+        searchContacts() {
+            this.contacts.forEach((contact) => {
+                contact.visible = contact.name.toLowerCase().includes(this.searchText.toLowerCase());
+            });
         },
     } // <- End Methods
 });
