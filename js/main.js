@@ -130,6 +130,7 @@ var app = new Vue({
                     status
                 });
                 activeContact.lastAccess = dayjs().format('HH:mm');
+                this.autoScroll();
         },
         /**
          * Search for one or more contacts while typing in search input
@@ -139,5 +140,21 @@ var app = new Vue({
                 contact.visible = contact.name.toLowerCase().includes(this.searchText.toLowerCase());
             });
         },
+        /**
+         * Auto scroll at the end of the chat
+         */
+        autoScroll() {
+            let scrollable = document.getElementsByClassName('main-chat')[0];
+            scrollable.scrollTop = scrollable.scrollTopMax;
+        },
+        /**
+         * Delete the selected message
+         * @param {object} message 
+         */
+        deleteMsg(message) {
+            message.message = 'Messaggio cancellato';
+            message.date = '';
+            message.status += ' deleted';
+        }
     } // <- End Methods
 });

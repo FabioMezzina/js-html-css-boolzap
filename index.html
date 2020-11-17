@@ -95,6 +95,12 @@
           <div v-for="message in contacts[chatIndex].messages" :class="['message', message.status]">
             <p>{{ message.message }}</p>
             <span>{{ message.date }}</span>
+            <button class="btn-delete-msg"
+                    v-if="message.status === 'sent'"
+                    @click="deleteMsg(message)"
+            >
+              <i class="fas fa-eraser"></i>
+            </button>
           </div>
         </div>
       </section>
