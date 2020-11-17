@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div id="app" class="container">
+  <div id="app" class="container" @click="hideChatMenu">
     <!-- ASIDE SECTION -->
     <aside>
       <!-- User section -->
@@ -85,7 +85,12 @@
         <div class="menu-icon">
           <i class="fas fa-search"></i>
           <i class="fas fa-paperclip"></i>
-          <i class="fas fa-ellipsis-v"></i>
+          <i class="fas fa-ellipsis-v"@click.stop="showChatMenu"></i>
+          <div :class="['chat-menu', chatMenuVisible]"
+              @click="deleteChat"
+          >
+          Cancella tutti i messaggi
+          </div>
         </div>
       </header>
 

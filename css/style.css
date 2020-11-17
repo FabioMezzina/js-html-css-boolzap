@@ -54,12 +54,21 @@ input::placeholder {
 
 /* APP Container */
 .container {
+  position: relative;
   display: flex;
   margin: auto;
   height: 95%;
   width: 85%;
   min-width: 1024px;
   background-color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 /* ASIDE SECTION */
@@ -193,6 +202,22 @@ span.name + span {
   color: #697376;
 }
 
+.chat-menu {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  filter: drop-shadow(0 0 3px rgba(0,0,0, .7));
+  cursor: pointer;
+}
+
+.chat-menu:hover {
+  background-color: #f2f2f2;
+}
+
 /* Chat section */
 .main-chat {
   position: relative;
@@ -223,6 +248,7 @@ span.name + span {
   min-height: 60px;
   border-radius: 10px;
   background-color: #fff;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .4));
 }
 
 .message p {

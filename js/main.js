@@ -12,6 +12,7 @@ var app = new Vue({
         chatIndex: 0,
         currentMessage: '',
         searchText: '',
+        chatMenuVisible: 'hidden',
         // Elenco contatti
         contacts: [
             {
@@ -155,6 +156,29 @@ var app = new Vue({
             message.message = 'Messaggio cancellato';
             message.date = '';
             message.status += ' deleted';
+        },
+        /**
+         * Show chat menu when clicking on icon
+         */
+        showChatMenu() {
+            this.chatMenuVisible = 'show';
+        },
+        /**
+         * Hide chat menu when clicking everywhere
+         */
+        hideChatMenu() {
+            this.chatMenuVisible = 'hidden';
+        },
+        /**
+         * Delete every message in the chat
+         */
+        deleteChat() {
+            this.contacts[this.chatIndex].messages.map((message) => {
+                message.message = 'Messaggio cancellato',
+                message.date = '',
+                message.status += ' deleted'
+            });
         }
+
     } // <- End Methods
 });
