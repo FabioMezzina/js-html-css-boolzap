@@ -138,7 +138,7 @@ var app = new Vue({
          */
         searchContacts() {
             this.contacts.forEach((contact) => {
-                contact.visible = contact.name.toLowerCase().includes(this.searchText.toLowerCase());
+                contact.visible = contact.name.toLowerCase().includes(this.searchText.toLowerCase().trim());
             });
         },
         /**
