@@ -79,7 +79,7 @@
           <img :src="`./img/avatar${contacts[chatIndex].avatar}.jpg`" alt="user avatar">
           <div>
             <span class="name">{{ contacts[chatIndex].name }}</span>
-            <span>Ultimo accesso oggi alle 10:35</span>
+            <span>Ultimo accesso oggi alle {{ contacts[chatIndex].lastAccess }}</span>
           </div>
         </div>
         <div class="menu-icon">

@@ -18,6 +18,7 @@ var app = new Vue({
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
+                lastAccess: '16:15',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -40,6 +41,7 @@ var app = new Vue({
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
+                lastAccess: '16:35',
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -62,6 +64,7 @@ var app = new Vue({
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
+                lastAccess: '16:15',
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -84,6 +87,7 @@ var app = new Vue({
                 name: 'Luisa',
                 avatar: '_4',
                 visible: true,
+                lastAccess: '15:50',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -97,7 +101,7 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
     }, // <- End Data
     methods: {
         /**
@@ -105,24 +109,27 @@ var app = new Vue({
          */
         sendMessage() {
             if(this.currentMessage.trim()) {
-                this.printMessage(this.currentMessage, 'sent');
+                const activeContact = this.contacts[this.chatIndex];
+                this.printMessage(this.currentMessage, 'sent', activeContact);
                 this.currentMessage = '';
                 setTimeout(() => {
-                    this.printMessage('ok', 'received');
+                    this.printMessage('ok', 'received', activeContact);
                 }, 1000);
             }
         },
         /**
          * Print a message in chat
-         * @param {string} message 
-         * @param {string} status 
+         * @param {string} message
+         * @param {string} status
+         * @param {object} activeContact
          */
-        printMessage(message, status) {
-            this.contacts[this.chatIndex].messages.push({
+        printMessage(message, status, activeContact) {
+            activeContact.messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     message,
                     status
                 });
+                activeContact.lastAccess = dayjs().format('HH:mm');
         },
         /**
          * Search for one or more contacts while typing in search input
